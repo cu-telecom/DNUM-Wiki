@@ -23,4 +23,4 @@ For more information on the proposal, see the [Technical](./technical/index.md) 
 
 # Contact Us
 
-We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)gi
+We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)
