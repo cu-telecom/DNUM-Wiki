@@ -2,7 +2,7 @@
 
 The Dns NUmber Mapping (DNUM) project was born from the vague aspiration to create a publicly available [ENUM](https://datatracker.ietf.org/doc/html/rfc6116) platform to allow hobbyist telephony platforms to reach other directly over the public internet.
 
-Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely ENUM, STIR/SHAKEN and DNSSEC.
+Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely SIP, ENUM, STIR/SHAKEN and DNSSEC.
 
 Unfortunatly despite giving it some thought, a fully decentralised approach appears to be difficult to achive with the current vision of using certificates to secure and verify the various components. However, the ENUM specification supports delegation, which should allow for regional groups to operate semi-autonomously or independently.
 
@@ -23,4 +23,4 @@ For more information on the proposal, see the [Technical](./technical/index.md) 
 
 # Contact Us
 
-We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)
+We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)gi
