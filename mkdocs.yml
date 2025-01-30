@@ -1,1 +1,28 @@
-site_name: My Docs
+site_name: DNUM
+site_url: https://dnum.cutel.net
+repo_url: https://github.com/cu-telecom/dnum-wiki
+nav:
+  - Welcome: index.md
+  - Technical:
+    - technical/index.md
+    - technical/routing.md
+    - technical/verification.md
+    - technical/encryption.md
+markdown_extensions:
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+plugins:
+  - search
+theme:
+  name: material
+  #logo: assets/logo-light.svg
+  #favicon: assets/logo-dark.svg
+  palette:
+    primary: black
+  features:
+    - toc.integrate
+    - navigation.top
+    - navigation.indexes 
+    #- navigation.expand
+  #custom_dir: ./overrides
