@@ -4,6 +4,7 @@ repo_url: https://github.com/cu-telecom/dnum-wiki
 nav:
   - Welcome: index.md
   - Technical:
+    - technical/numbering.md
     - technical/index.md
     - technical/routing.md
     - technical/verification.md
