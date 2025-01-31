@@ -2,7 +2,7 @@ site_name: DNUM
 site_url: https://dnum.cutel.net
 repo_url: https://github.com/cu-telecom/dnum-wiki
 nav:
-  - Welcome: index.md
+  - About: index.md
   - Technical:
     - technical/numbering.md
     - technical/index.md
@@ -26,4 +26,7 @@ theme:
     - navigation.top
     - navigation.indexes 
     #- navigation.expand
-  #custom_dir: ./overrides
+  custom_dir: ./overrides
+extra:
+  navigation:
+    hide: navigation

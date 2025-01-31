@@ -1,4 +1,3 @@
-
 <div style="text-align: left;">
   <img src="assets/full-logo-dark.svg" alt="My SVG Logo" width="400">
 </div>
