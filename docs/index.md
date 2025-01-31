@@ -24,6 +24,6 @@ For more information on the proposal, see the [Technical](./technical/index.md) 
 * But I'm happy using my existing network? - It's hoped we can offer a method of peering into existing networks, but it should also be possible to configure your system to interconnect with multiple networks. 
 * Can I claim the same number I use on the PSTN? - On initial thought this should probably be avoided. If its available, you could claim the number, but we probably won't be reserving numbers, verifying ownership of the PSTN number, or encouraging the use of using DNUM to lookup PSTN numbers in the hope of reaching the right person.
 
-# Contact Us
+## Contact Us
 
 We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)
