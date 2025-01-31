@@ -27,5 +27,3 @@ theme:
     - navigation.indexes 
     #- navigation.expand
   #custom_dir: ./overrides
-extra:
-  custom_domain: "dnum.cutel.net"
