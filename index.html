@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dnum" class="md-skip">
+        <a href="#disclaimer" class="md-skip">
           Skip to content
         </a>
       
@@ -88,8 +88,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="DNUM" class="md-header__button md-logo" aria-label="DNUM" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="assets/full-logo-light.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -197,8 +196,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="DNUM" class="md-nav__button md-logo" aria-label="DNUM" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="assets/full-logo-light.svg" alt="logo">
 
     </a>
     DNUM
@@ -231,8 +229,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -261,8 +257,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -283,6 +277,15 @@
   <a href="#faq" class="md-nav__link">
     <span class="md-ellipsis">
       FAQ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact-us" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact Us
     </span>
   </a>
   
@@ -464,8 +467,11 @@
   
 
 
-<h1 id="dnum">DNUM</h1>
-<p>The Dns NUmber Mapping (DNUM) project was born from the vague aspiration to create a publicly available <a href="https://datatracker.ietf.org/doc/html/rfc6116">ENUM</a> platform to allow hobbyist telephony platforms to reach other directly over the public internet.</p>
+<div style="text-align: left;">
+  <img src="assets/full-logo-dark.svg" alt="My SVG Logo" width="400">
+</div>
+
+<p>The <strong>D</strong>ns <strong>NU</strong>mber <strong>M</strong>apping (DNUM) project was born from a vague aspiration to create a publicly available <a href="https://datatracker.ietf.org/doc/html/rfc6116">ENUM</a> platform to allow hobbyist telephony platforms to reach other directly over the public internet.</p>
 <p>Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely SIP, ENUM, STIR/SHAKEN and DNSSEC.</p>
 <p>Unfortunatly despite giving it some thought, a fully decentralised approach appears to be difficult to achive with the current vision of using certificates to secure and verify the various components. However, the ENUM specification supports delegation, which should allow for regional groups to operate semi-autonomously or independently.</p>
 <p>For more information on the proposal, see the <a href="technical/">Technical</a> section.</p>

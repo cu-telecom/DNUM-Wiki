@@ -90,8 +90,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="DNUM" class="md-header__button md-logo" aria-label="DNUM" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/full-logo-light.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -199,8 +198,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="DNUM" class="md-nav__button md-logo" aria-label="DNUM" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../../assets/full-logo-light.svg" alt="logo">
 
     </a>
     DNUM
@@ -338,6 +336,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Number Routing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -347,6 +356,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enum-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENUM Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secondary-dns-servers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secondary DNS servers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -421,9 +476,77 @@
 
 
 <h1 id="number-routing">Number Routing</h1>
-<p>To route calls between platforms we propose utilisiing an ENUM like platform, defined in <a href="https://datatracker.ietf.org/doc/html/rfc6116">RFC6116</a></p>
-<p>ENUM uses simple DNS lookups to resolve the URI for a particular number. Wildcards are supported, allowing a single record to route an entire prefix and delegation is also built in to allow a particular prefix, e.g a country code, to be redirected to another DNS server.</p>
-<p>It's hoped that users will host secondary DNS servers to reduce load and increase resilience.</p>
+<p>To route calls between platforms we propose utilising an ENUM like service, defined in <a href="https://datatracker.ietf.org/doc/html/rfc6116">RFC6116</a></p>
+<p>ENUM performs DNS lookups for a number to resolve a Uniform Resource Identifier (URI) to route the call to. A URI might look something like <code>sip:441632556789@example.com</code>, which indicates a call should be sent via SIP to the number <code>441632556789</code>, on the server that reached at <code>example.com</code></p>
+<p>ENUM also supports wildcards, allowing a single record to route an entire prefix, and delegation is also built in to allow a particular prefix, e.g a country code, to be redirected to another DNS server.</p>
+<h2 id="enum-overview">ENUM Overview</h2>
+<p><a href="https://en.wikipedia.org/wiki/NAPTR_record">Name Authority Pointer (NAPTR)</a> records are created on a DNS server, with the full number including country code reversed. e.g for the number 441632556789 you would create the a record for <code>9.8.7.6.5.5.2.3.6.1.4.4.e164.example.com</code> that looks something like:</p>
+<p><code>100 10 "u" "E2U+sip" "!^.*$!sip:441632556789@example.com!" .</code></p>
+<p>The record has a specific syntax, described below:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Order</strong></td>
+<td><code>100</code></td>
+<td>Defines the processing order. Lower values have higher priority.</td>
+</tr>
+<tr>
+<td><strong>Preference</strong></td>
+<td><code>10</code></td>
+<td>Determines priority among records with the same <code>ORDER</code>. Lower values are preferred.</td>
+</tr>
+<tr>
+<td><strong>Flags</strong></td>
+<td><code>"u"</code></td>
+<td>Specifies the record type: <code>"u"</code> (URI), <code>"s"</code> (SRV lookup), <code>"p"</code> (non-terminal processing).</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td><code>"E2U+sip"</code></td>
+<td>Defines the ENUM service <code>"E2U+sip"</code> (ENUM to SIP mapping).</td>
+</tr>
+<tr>
+<td><strong>Regex</strong></td>
+<td><code>"!^.*$!sip:441632556789@example.com!"</code></td>
+<td>A regular expression for rewriting the ENUM query into a target URI. Rewrites any match (<code>^.*$</code>) to <code>sip:441632556789@example.com</code>.</td>
+</tr>
+<tr>
+<td><strong>Replacement</strong></td>
+<td><code>.</code></td>
+<td>Alternative domain (usually <code>.</code> for ENUM records using <code>REGEX</code>). No alternative domain; use the result of the Regex directly.</td>
+</tr>
+</tbody>
+</table>
+<p>You can test an example ENUM record for 441632556789 by running the following command. Note the URI doesn't route anywhere:</p>
+<p><code>dig NAPTR 9.8.7.6.5.5.2.3.6.1.4.4.dnum.cutel.net</code></p>
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.16.1-Ubuntu &lt;&lt;&gt;&gt; NAPTR 9.8.7.6.5.5.2.3.6.1.4.4.dnum.cutel.net
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 53739
+;; flags: qr rd ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;9.8.7.6.5.5.2.3.6.1.4.4.dnum.cutel.net.        IN NAPTR
+
+;; ANSWER SECTION:
+9.8.7.6.5.5.2.3.6.1.4.4.dnum.cutel.net. 0 IN NAPTR 100 10 &quot;u&quot; &quot;E2U+sip&quot; &quot;!^.*$!sip:441632556789@example.com!&quot; .
+
+;; Query time: 10 msec
+;; SERVER: 172.31.48.1#53(172.31.48.1)
+;; WHEN: Thu Jan 30 23:51:40 GMT 2025
+;; MSG SIZE  rcvd: 157
+</code></pre>
+<h2 id="secondary-dns-servers">Secondary DNS servers</h2>
+<p>It's hoped that users will host secondary DNS servers to reduce load and increase resilience. And for fun!</p>
+<h2 id="security">Security</h2>
 <p>To secure the DNS records its envisioned we'll use DNSSEC, but this is a topic we don't currently know much about. If you do, please get in touch.</p>
 
 
