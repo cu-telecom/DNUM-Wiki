@@ -1,6 +1,9 @@
-# DNUM
 
-The Dns NUmber Mapping (DNUM) project was born from the vague aspiration to create a publicly available [ENUM](https://datatracker.ietf.org/doc/html/rfc6116) platform to allow hobbyist telephony platforms to reach other directly over the public internet.
+<div style="text-align: left;">
+  <img src="assets/full-logo-dark.svg" alt="My SVG Logo" width="400">
+</div>
+
+The **D**ns **NU**mber **M**apping (DNUM) project was born from a vague aspiration to create a publicly available [ENUM](https://datatracker.ietf.org/doc/html/rfc6116) platform to allow hobbyist telephony platforms to reach other directly over the public internet.
 
 Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely SIP, ENUM, STIR/SHAKEN and DNSSEC.
 
