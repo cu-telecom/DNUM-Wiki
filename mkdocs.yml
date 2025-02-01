@@ -3,12 +3,15 @@ site_url: https://dnum.cutel.net
 repo_url: https://github.com/cu-telecom/dnum-wiki
 nav:
   - About: index.md
-  - Technical:
+  - Technical Overview:
     - technical/numbering.md
     - technical/index.md
     - technical/routing.md
     - technical/verification.md
     - technical/encryption.md
+  # - Configuration:
+    # - configuration/index.md
+    # - configuration/stirshaken.md
 markdown_extensions:
   - pymdownx.tilde
   - attr_list

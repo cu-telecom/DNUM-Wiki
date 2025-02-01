@@ -8,7 +8,7 @@ Several other popular hobbyist networks exist, but have quirks or use their own 
 
 Unfortunatly despite giving it some thought, a fully decentralised approach appears to be difficult to achive with the current vision of using certificates to secure and verify the various components. However, the ENUM specification supports delegation, which should allow for regional groups to operate semi-autonomously or independently.
 
-For more information on the proposal, see the [Technical](./technical/index.md) section.
+For more information on the proposal, see the [Technical Overview](./technical/index.md) section.
 
 ## Disclaimer
 
