@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#technical" class="md-skip">
+        <a href="#technical-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Technical
+              Technical Overview
             
           </span>
         </div>
@@ -367,11 +367,11 @@
   
   
     <li class="md-nav__item">
-      <a href="encryption/" class="md-nav__link">
+      <a href="encryption_authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Encryption
+    Encryption and Authentication
   </span>
   
 
@@ -406,8 +406,21 @@
   
 
 
-<h1 id="technical">Technical</h1>
-<p>Click on the links on the left, until we write something here</p>
+<h1 id="technical-overview">Technical Overview</h1>
+<p>To operate a telephone "network" there's a few things we need to consider.</p>
+<h2 id="numbering">Numbering</h2>
+<p>Numbering makes up a big part of telephony. We propose a hierarchal approach so numbers can be split between organisations and their sub-organisation, with the potential for more granularity.</p>
+<p>For more information, see <a href="numbering/">Numbering</a></p>
+<h2 id="routing">Routing</h2>
+<p>To route calls between entities, we propose the use of an <a href="https://en.wikipedia.org/wiki/Telephone_number_mapping">ENUM</a> like system where telephone numbers are mapped to URIs via DNS records.</p>
+<p>For more information, see <a href="routing/">Routing</a></p>
+<h2 id="security">Security</h2>
+<p>Securing such a network is made up of several parts:</p>
+<ul>
+<li>Authenticating connections between entities. See <a href="encryption_authentication/">Encryption and Authentication</a></li>
+<li>Encrypting the Signalling and Media. See <a href="encryption_authentication/">Encryption and Authentication</a></li>
+<li>Verifying the Caller ID. See <a href="verification/">Verification</a></li>
+</ul>
 
 
 

@@ -426,11 +426,11 @@
   
   
     <li class="md-nav__item">
-      <a href="technical/encryption/" class="md-nav__link">
+      <a href="technical/encryption_authentication/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Encryption
+    Encryption and Authentication
   </span>
   
 
@@ -473,11 +473,12 @@
 
 <p>The <strong>D</strong>ns <strong>NU</strong>mber <strong>M</strong>apping (DNUM) project was born from a vague aspiration to create a publicly available <a href="https://datatracker.ietf.org/doc/html/rfc6116">ENUM</a> platform to allow hobbyist telephony platforms to reach other directly over the public internet.</p>
 <p>Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely SIP, ENUM, STIR/SHAKEN and DNSSEC.</p>
-<p>Unfortunatly despite giving it some thought, a fully decentralised approach appears to be difficult to achive with the current vision of using certificates to secure and verify the various components. However, the ENUM specification supports delegation, which should allow for regional groups to operate semi-autonomously or independently.</p>
+<p>Unfortunately despite giving it some thought, a fully decentralised approach appears to be difficult to achieve with the currently available tools. However, we're striving to build a framework that allows autonomous groups to manage sub-groups and their numbers.</p>
 <p>For more information on the proposal, see the <a href="technical/">Technical Overview</a> section.</p>
 <h2 id="disclaimer">Disclaimer</h2>
 <ul>
 <li>This Wiki has been chucked together to gauge interest and start conversations. It's far from complete.</li>
+<li>Things are rapidly evolving, plans might change.</li>
 <li>At present this is just an experiment. It may never come to fruition, or die off like many other projects before it.</li>
 <li>Whilst the project is currently hosted on the <a href="https://cutel.net">cutel.net</a> domain whilst we come up with a better name, DNUM isn't a CuTEL specific project.</li>
 </ul>
@@ -486,7 +487,7 @@
 <li>Why DNUM? - The name is a work in progress. If you've got a better one let us know.</li>
 <li>Why DNUM and not ENUM? - The RFC6116 explicitly states you can't use the term "ENUM" to describe a DDDS service for private numbering plans. Lame.</li>
 <li>But I'm happy using my existing network? - It's hoped we can offer a method of peering into existing networks, but it should also be possible to configure your system to interconnect with multiple networks. </li>
-<li>Can I claim the same number I use on the PSTN? - On initial thought this should probably be avoided. If its available, you could claim the number, but we probably won't be reserving numbers, verifying ownership of the PSTN number, or encouraging the use of using DNUM to lookup PSTN numbers in the hope of reaching the right person.</li>
+<li>Can I claim the same number I use on the PSTN? - Probably not.</li>
 </ul>
 <h2 id="contact-us">Contact Us</h2>
 <p>We're currently coordinating on the <a href="https://t.co/AixzjCUT9t">CuTEL Discord Server</a></p>

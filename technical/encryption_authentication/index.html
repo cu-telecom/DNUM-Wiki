@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://dnum.cutel.net/technical/encryption/">
+        <link rel="canonical" href="https://dnum.cutel.net/technical/encryption_authentication/">
       
       
         <link rel="prev" href="../verification/">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#encryption" class="md-skip">
+        <a href="#encryption-and-authentication" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Encryption
+              Encryption and Authentication
             
           </span>
         </div>
@@ -378,7 +378,7 @@
           
   
   <span class="md-ellipsis">
-    Encryption
+    Encryption and Authentication
   </span>
   
 
@@ -389,7 +389,7 @@
         
   
   <span class="md-ellipsis">
-    Encryption
+    Encryption and Authentication
   </span>
   
 
@@ -462,12 +462,12 @@
   
 
 
-<h1 id="encryption">Encryption</h1>
-<p>Encryption <em>could</em> be optional, but highly encouraged.</p>
+<h1 id="encryption-and-authentication">Encryption and Authentication</h1>
+<p>As we're building something new it makes sense to drag telephony into the 21st century and mandate encryption. As well as preventing eavesdropping, the built-in authentication of mutual TLS will massively improve security, removing some of the concern of leaving a SIP server open to the world.</p>
 <h2 id="sip-signalling">SIP Signalling</h2>
-<p>to encrypt the SIP signalling it's up for discussion if we use standard certificates from the likes of Let's Encrypt, or operate a CA to issue our own certificates. We will need to sign certificates for the <a href="../verification/">Verification</a>) part, so it might be more sensible to issue our own. Running our own CA would help protect against bots and scanners, although scanning over TLS is minimal.</p>
+<p>As we will need to manage a Certificate Authority for the <a href="../verification/">Verification</a>) part, it makes sense to also issue TLS certificates for Client / Server authentication.</p>
 <h2 id="media">Media</h2>
-<p>For the media streams the default encryption will be SDES, but DTLS / ZRTP etc could also be used.</p>
+<p>For the media streams the default encryption will be SDES, but experiments with DTLS / ZRTP would also be permitted.</p>
 
 
 
