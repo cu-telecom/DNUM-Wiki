@@ -8,7 +8,7 @@ nav:
     - technical/index.md
     - technical/routing.md
     - technical/verification.md
-    - technical/encryption.md
+    - technical/encryption_authentication.md
   # - Configuration:
     # - configuration/index.md
     # - configuration/stirshaken.md
