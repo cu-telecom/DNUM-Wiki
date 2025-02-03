@@ -19,8 +19,8 @@ For more information on the proposal, see the [Technical Overview](./technical/i
 
 ## FAQ
 
-* Why DNUM? - The name is a work in progress. If you've got a better one let us know.
-* Why DNUM and not ENUM? - The RFC6116 explicitly states you can't use the term "ENUM" to describe a DDDS service for private numbering plans. Lame.
+* Why DNUM? - It was a temporary name but after chucking together the logo, we quite like it.
+* Why DNUM and not ENUM? - The RFC6116 explicitly states you can't use the term "ENUM" to describe a [DDDS](https://en.wikipedia.org/wiki/Dynamic_Delegation_Discovery_System) service for private numbering plans. Lame.
 * But I'm happy using my existing network? - It's hoped we can offer a method of peering into existing networks, but it should also be possible to configure your system to interconnect with multiple networks. 
 * Can I claim the same number I use on the PSTN? - Probably not.
 
