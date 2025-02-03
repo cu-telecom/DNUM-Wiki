@@ -374,17 +374,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Encryption and Authentication
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -394,43 +383,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sip-signalling" class="md-nav__link">
-    <span class="md-ellipsis">
-      SIP Signalling
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#media" class="md-nav__link">
-    <span class="md-ellipsis">
-      Media
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -463,11 +415,9 @@
 
 
 <h1 id="encryption-and-authentication">Encryption and Authentication</h1>
-<p>As we're building something new it makes sense to drag telephony into the 21st century and mandate encryption. As well as preventing eavesdropping, the built-in authentication of mutual TLS will massively improve security, removing some of the concern of leaving a SIP server open to the world.</p>
-<h2 id="sip-signalling">SIP Signalling</h2>
+<p>Where possible Mutual TLS should be used to encrypt and authenticate the SIP signalling between SIP servers. This both prevents eavesdropping and reduces the risk of leaving a SIP server open to the world, as only servers with a signed client certificate will be able to connect. For encrypting the media streams, SDES, DTLS or ZRTP could be utilised.</p>
 <p>As we will need to manage a Certificate Authority for the <a href="../verification/">Verification</a>) part, it makes sense to also issue TLS certificates for Client / Server authentication.</p>
-<h2 id="media">Media</h2>
-<p>For the media streams the default encryption will be SDES, but experiments with DTLS / ZRTP would also be permitted.</p>
+<p>On older more obscure systems this might not be possible, so whether encryption/authentication is mandatory will be decided by local policy.</p>
 
 
 
