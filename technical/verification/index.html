@@ -417,11 +417,11 @@
 
 
 <h1 id="verification">Verification</h1>
-<p>To verify the source of a call is permitted to use the presented Caller ID, systems could utilise <a href="https://en.wikipedia.org/wiki/STIR/SHAKEN">STIR/SHAKEN</a> - a method of cryptographically verifying the source of a number. STIR/SHAKEN is now a regulatory requirement in the US, so it's widely supported in the various SIP server offerings.</p>
+<p>To verify the source of a call is permitted to use the presented Caller ID, systems <em>could</em> utilise <a href="https://en.wikipedia.org/wiki/STIR/SHAKEN">STIR/SHAKEN</a> - a method of cryptographically verifying the source of a number. STIR/SHAKEN is now a regulatory requirement in the US, so it's widely supported in the various SIP server offerings.</p>
 <p>Implementing our own "private" STIR/SHAKEN implementation would require running a Certificate Authority and "chain of trust" so users can sign and validate the required identity data.</p>
 <p>It was initially hoped/assumed that certificates would only be able to sign for numbers which they owned. This functionality is mentioned in the RFC but hasn't been implemented as part of the US regulatory implementation. Instead the certificates verify the "Service Provider Code" of the service provider that originated the call.</p>
 <p>After some discussion, it was pointed out that certificates limited to signing the identity of certain numbers probably wouldn't work on the PSTN due to things like number porting, and scenarios where subscribers aren't signing their own calls, but are presenting the same CLI via multiple outbound carriers.</p>
-<p>One possible idea would be to use DNS TXT records to define the "Service Provide Codes" permitted to originate a particular Caller ID, much like the <a href="https://en.wikipedia.org/wiki/Sender_Policy_Framework">Sender Policy Network</a> used with email. </p>
+<p>One possible idea would be to use DNS TXT records to define the "Service Provide Codes" permitted to originate a particular Caller ID, much like the <a href="https://en.wikipedia.org/wiki/Sender_Policy_Framework">Sender Policy Network</a> used with email.</p>
 
 
 

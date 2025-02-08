@@ -311,6 +311,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Numbering
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -320,6 +331,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#number-lengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number lengths
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -419,7 +458,7 @@
 <h1 id="numbering">Numbering</h1>
 <p>Initially it was assumed that for the UK at least, we'd stick with the existing national numbering scheme, area codes etc. As the idea of DNUM being made up of a hierarchy of autonomous groups has matured, it's become apparent that this might not be the best approach.</p>
 <p>Instead something like the following might be more practical:</p>
-<p><code>+444-1234-123456</code></p>
+<p><code>+44-1234-12345</code></p>
 <p>Which could be broken down as:</p>
 <table>
 <thead>
@@ -431,15 +470,18 @@
 </thead>
 <tbody>
 <tr>
-<td>+444</td>
+<td>+44</td>
 <td>1234</td>
-<td>123456</td>
+<td>12345</td>
 </tr>
 </tbody>
 </table>
-<p>This scheme could be potentially split down further if more granularity is required.</p>
-<p>The proposed scheme might result in long numbers that are unpleasant to dial from a rotary phone, but it's assumed that most dialling will take place within your "locality" - meaning the prefixes can be omitted. </p>
-<p>Some more refinement is probably needed here as we move forward.</p>
+<p>The numbers could be potentially split down further if more granularity is required.</p>
+<p>The proposed scheme might result in long numbers that are unpleasant to dial from a rotary phone, but it's assumed that most dialling will take place within your "sub-group" - meaning the prefixes can be omitted.</p>
+<h2 id="number-lengths">Number lengths</h2>
+<p>One challenge is deciding how long numbers should be, which is largely driven by demand and hard to predict. Too short and they might become quickly exhausted. Too long and they're tedious to dial.</p>
+<p>As a work around, a version number could be added to the ENUM record, e.g 5.2.3.6.1.4.4.<strong>v0</strong>.dnum.org. Then as number exhaustion approaches, existing numbers could be prefixed with a 1 and the version incremented - our very own <a href="https://en.wikipedia.org/wiki/PhONEday">PhONEday</a>! </p>
+<p>To minimise disruption, existing DNS records could be prefixed and copied over to the new version but the previous records would be retained. If systems haven't updated their lookup version, they will still be able to call the same numbers as before, but won't have access to any new numbers issued after the migration. Some thought still needs to be given on how this is handled from the answering side. URIs could be mapped to UUIDs to avoid having to update them, or systems could be configured to route calls based on the last X digits so they continue to function once prefixed. This will likely be decided by what systems can support.</p>
 
 
 

@@ -417,7 +417,7 @@
 <h1 id="encryption-and-authentication">Encryption and Authentication</h1>
 <p>Where possible Mutual TLS should be used to encrypt and authenticate the SIP signalling between SIP servers. This both prevents eavesdropping and reduces the risk of leaving a SIP server open to the world, as only servers with a signed client certificate will be able to connect. For encrypting the media streams, SDES, DTLS or ZRTP could be utilised.</p>
 <p>As we will need to manage a Certificate Authority for the <a href="../verification/">Verification</a>) part, it makes sense to also issue TLS certificates for Client / Server authentication.</p>
-<p>On older more obscure systems this might not be possible, so whether encryption/authentication is mandatory will be decided by local policy.</p>
+<p>On older more obscure systems this might not be supported, so whether encryption/authentication is mandatory will be decided by local policy.</p>
 
 
 
