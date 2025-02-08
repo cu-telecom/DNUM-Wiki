@@ -2,11 +2,9 @@
   <img src="assets/full-logo-dark.svg" alt="My SVG Logo" width="400">
 </div>
 
-The **D**ns **NU**mber **M**apping (DNUM) project was born from a vague aspiration to create a publicly available [ENUM](https://datatracker.ietf.org/doc/html/rfc6116) platform to allow hobbyist telephony platforms to reach other directly over the public internet.
+The **D**irectory, **N**umber & **U**RI **M**anagement (DNUM) project was born from a vague aspiration to create a publicly available [ENUM](https://datatracker.ietf.org/doc/html/rfc6116) platform to allow hobbyist telephony platforms to "federate" over the public internet.
 
-Several other popular hobbyist networks exist, but have quirks or use their own special sauce to function. The goal for DNUM is to use existing standards to provide simple, efficient and secure call routing - Namely SIP, ENUM, STIR/SHAKEN and DNSSEC.
-
-Unfortunately despite giving it some thought, a fully decentralised approach appears to be difficult to achieve with the currently available tools. However, we're striving to build a framework that allows autonomous groups to manage sub-groups and their numbers.
+The initial concept was a single "domain" with strict policies on things like encryption and verification, but after giving it more thought it became clear that instead, number blocks could be issued out to sub-groups, and they could have the autonomy to create their own policies.
 
 For more information on the proposal, see the [Technical Overview](./technical/index.md) section.
 
@@ -19,7 +17,7 @@ For more information on the proposal, see the [Technical Overview](./technical/i
 
 ## FAQ
 
-* Why DNUM? - It was a temporary name but after chucking together the logo, we quite like it.
+* Why DNUM? - It was a temporary name but after chucking together the logo, and creating a backronym, we quite like it.
 * Why DNUM and not ENUM? - The RFC6116 explicitly states you can't use the term "ENUM" to describe a [DDDS](https://en.wikipedia.org/wiki/Dynamic_Delegation_Discovery_System) service for private numbering plans. Lame.
 * But I'm happy using my existing network? - It's hoped we can offer a method of peering into existing networks, but it should also be possible to configure your system to interconnect with multiple networks. 
 * Can I claim the same number I use on the PSTN? - Probably not.

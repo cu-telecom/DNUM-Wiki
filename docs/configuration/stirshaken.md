@@ -75,7 +75,30 @@ openssl x509 -req -in sp1-csr.pem -CA ../stir-shaken-ca/ca-cert.pem -CAkey ../st
 
 ## Configuring asterisk
 
-N.B, Asterisk needs the res_stir_shaken module loaded, which might not have been built when you compiled asterisk. For reasons unknown despite having libjwt installed, asterisk didn't seem to detect it during compile time. To fix this I have to add `--with-libjwt-bundled` to the configure command.
 
-Don't forget to fix the ownership of the certificates. Also add the ACL to acl.conf
+N.B, Asterisk needs the res_stir_shaken module loaded, which might not have been built when you compiled asterisk. For reasons unknown despite having libjwt installed, Asterisk 22 didn't seem to detect it during compile time. To fix this I have to add `--with-libjwt-bundled` to the configure command. Don't forget to fix the ownership of the certificates.
 
+Copy the generated keys and certs to /var/lib/asterisk/keys/stir_shaken/
+
+Edit stir_shaken.conf, update certificate locations (both on the server and the HTTPS URL), define the TNs, define the profile.
+
+Edit your endpoint(s) in pjsip.conf to include stir_shaken_profile=myprofile
+
+Edit acl.conf to include:
+```
+[default-acl]
+permit=0.0.0.0/0
+```
+
+Edit your extensions.conf to include something like:
+
+```
+[main-routing]
+exten => _X.,1,NoOp(main-routing)
+same => n,NoOp(Number of STIR/SHAKEN identities: ${STIR_SHAKEN(count)})
+same => n,NoOp(Identity ${STIR_SHAKEN(0, identity)} has attestation level ${STIR_SHAKEN(0, attestation)})
+same => n,NoOp(Identity ${STIR_SHAKEN(0, identity)} has is verified? ${STIR_SHAKEN(0, verify_result)})
+same => n,Goto(play_silence,s,1)
+```
+
+When finished, restart Asterisk

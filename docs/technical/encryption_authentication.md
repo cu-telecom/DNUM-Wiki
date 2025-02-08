@@ -4,4 +4,4 @@ Where possible Mutual TLS should be used to encrypt and authenticate the SIP sig
 
 As we will need to manage a Certificate Authority for the [Verification](verification.md)) part, it makes sense to also issue TLS certificates for Client / Server authentication.
 
-On older more obscure systems this might not be possible, so whether encryption/authentication is mandatory will be decided by local policy.
+On older more obscure systems this might not be supported, so whether encryption/authentication is mandatory will be decided by local policy.

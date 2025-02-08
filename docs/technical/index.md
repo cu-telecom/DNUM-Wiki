@@ -12,6 +12,8 @@ For more information, see [Numbering](numbering.md)
 
 To route calls between entities, we propose the use of an [ENUM](https://en.wikipedia.org/wiki/Telephone_number_mapping) like system where telephone numbers are mapped to URIs via DNS records.
 
+Whilst ENUM will make up the core of the project, there's scope for translation services such as a SIP 302 redirect server or a HTTPS API.
+
 For more information, see [Routing](routing.md)
 
 ## Security
