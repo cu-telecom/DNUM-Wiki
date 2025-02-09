@@ -24,3 +24,5 @@ For more information on the proposal, see the [Technical Overview](./technical/i
 ## Contact Us
 
 We're currently coordinating on the [CuTEL Discord Server](https://t.co/AixzjCUT9t)
+
+Or you send us an email to `info@`
