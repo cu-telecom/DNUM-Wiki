@@ -13,7 +13,6 @@ For more information on the proposal, see the [Technical Overview](./technical/i
 * This Wiki has been chucked together to gauge interest and start conversations. It's far from complete.
 * Things are rapidly evolving, plans might change.
 * At present this is just an experiment. It may never come to fruition, or die off like many other projects before it.
-* Whilst the project is currently hosted on the [cutel.net](https://cutel.net) domain whilst we come up with a better name, DNUM isn't a CuTEL specific project.
 
 ## FAQ
 
